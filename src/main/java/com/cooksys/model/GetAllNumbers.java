@@ -40,7 +40,6 @@ public class GetAllNumbers {
 			} else {
 				System.out.println("No State with that name!");
 			}
-			//result.add(new GetAllUsersResponse(user.getId(), user.getState(), user.getFirstName()));
 		}
 		return result;
 	}

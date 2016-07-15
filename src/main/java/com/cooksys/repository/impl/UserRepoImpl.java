@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.cooksys.entity.AppUser;
+import com.cooksys.entity.Numbers;
 import com.cooksys.entity.Titles;
 import com.cooksys.repository.UserRepo;
 
@@ -20,6 +21,9 @@ public class UserRepoImpl implements UserRepo {
 
 	@Override
 	public int incrementLocation(Integer location) {
+		em.createQuery("select local.locationNum from Numbers local where local.locationNum = :location", Numbers.class)
+		.setParameter("location", location)
+		.getFirstResult();
 		return location++;
 	}
 
@@ -48,7 +52,8 @@ public class UserRepoImpl implements UserRepo {
 		}
 		return "Hello, Dolly";
 	}
-
+	
+	//Honestly not quite sure what I'm supposed to do with this method.
 	@Override
 	public String countForNum(String userName, String password, Integer location) {
 		return null;
@@ -69,7 +74,7 @@ public class UserRepoImpl implements UserRepo {
 
 	@Override
 	public String conversionByNum(String users) {
-		return null;
+		return "Seems like a lot of math. Leave this to the end.";
 	}
 
 }

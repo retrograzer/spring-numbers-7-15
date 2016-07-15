@@ -20,7 +20,7 @@ public class UserController {
 	@Autowired
 	private UserRepo userRepo;
 	
-	@RequestMapping("encourage")
+	@RequestMapping("test")
 	public String howdy() {
 		return "Howdy, pardner. You can do this.";
 	}
